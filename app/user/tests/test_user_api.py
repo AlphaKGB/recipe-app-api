@@ -71,7 +71,7 @@ class PublicUserApiTests(TestCase):
         user_details = {
             'name': 'Test Name',
             'email': 'test@example.com',
-            'password': 'test-user-password1223',
+            'password': 'test-user-password123',
         }
         create_user(**user_details)
 
@@ -136,7 +136,7 @@ class PrivateUserApiTests(TestCase):
         res = self.client.post(ME_URL, {})
         self.assertEqual(res.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
-    def test_utdate_user_profile(self):
+    def test_update_user_profile(self):
         """Test updating the user profile for the authenticated user."""
         payload = {'name': 'Updated name', 'password': 'newpassword123'}
 
