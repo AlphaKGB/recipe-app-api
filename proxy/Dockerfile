@@ -1,4 +1,4 @@
-from nginxinc/nginx-unprivileged:1-alpine
+FROM nginxinc/nginx-unprivileged:1-alpine
 LABEL maintainer="AlphaKGB"
 
 COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
