@@ -152,7 +152,7 @@ class PrivateRecipeAPITests(TestCase):
         )
 
         payload = {'title': 'New recipe title',
-                   'link': 'httpsL//example.com/new-recipe.pdf',
+                   'link': 'https://example.com/new-recipe.pdf',
                    'description': 'New recipe description',
                    'time_minutes': 10,
                    'price':  Decimal('2.50'),
@@ -338,7 +338,7 @@ class PrivateRecipeAPITests(TestCase):
         new_ingredient = Ingredient.objects.get(user=self.user, name='Limes')
         self.assertIn(new_ingredient, recipe.ingredients.all())
 
-    def test_update_recipe_assing_ingredient(self):
+    def test_update_recipe_assign_ingredient(self):
         """Test assigning an existing ingredient when updating a recipe."""
         ingredient1 = Ingredient.objects.create(user=self.user, name='Pepper')
         recipe = create_recipe(user=self.user)
